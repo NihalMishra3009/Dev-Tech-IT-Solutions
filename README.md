@@ -2,9 +2,11 @@
 
 > An end-to-end machine learning project for analyzing student performance and predicting student outcomes using supervised learning techniques.
 
+![Jupyter Notebook Preview](assets/notebook_preview.png)
+
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 The **Student Performance Prediction & Analysis System** is an end-to-end machine learning solution designed to analyze academic and behavioral data to predict whether a student will **Pass** or **Fail**. Developed as a **Day 1 – AI/ML Intern Ability Assessment Task**, this project evaluates student risk levels using key academic metrics such as self-study duration, class attendance, and participation.
 
@@ -18,7 +20,7 @@ The **Student Performance Prediction & Analysis System** is an end-to-end machin
 
 ---
 
-## ❓ Problem Statement
+## Problem Statement
 
 In academic environments, early identification of struggling students is critical for timely educational intervention. Traditional evaluation methods often rely on end-of-term results when it is too late to offer remedial support.
 
@@ -32,7 +34,7 @@ The objective of this project is to leverage student behavioral data—specifica
 
 ---
 
-## 🎯 Project Objectives
+## Project Objectives
 
 - **Data Loading & Inspection**: Verify dataset integrity, data types, missing values, and record duplication across 1,000,000 entries.
 - **Exploratory Data Analysis**: Conduct statistical analysis and visualize distributions, correlation matrices, and grade-based feature variance.
@@ -46,7 +48,7 @@ The objective of this project is to leverage student behavioral data—specifica
 
 ---
 
-## 📊 Dataset Information
+## Dataset Information
 
 The dataset is stored in `student_performance.csv` and contains **1,000,000 student records** with 6 attributes.
 
@@ -74,7 +76,7 @@ The dataset is stored in `student_performance.csv` and contains **1,000,000 stud
 
 ---
 
-## 🔄 Machine Learning Workflow
+## Machine Learning Workflow
 
 The end-to-end pipeline follows a structured, robust machine learning workflow:
 
@@ -95,7 +97,7 @@ flowchart TD
 
 ---
 
-## 📈 Exploratory Data Analysis (EDA)
+## Exploratory Data Analysis (EDA)
 
 Exploratory analysis yielded key insights into student grade distribution and feature relationships:
 
@@ -127,7 +129,7 @@ Exploratory analysis yielded key insights into student grade distribution and fe
 
 ---
 
-## 🧹 Data Preprocessing
+## Data Preprocessing
 
 1. **Target Engineering (`pass_fail`)**:
    - Grades `A`, `B`, `C`, and `D` were mapped to `"Pass"` (993,796 records | 99.38%).
@@ -144,7 +146,7 @@ Exploratory analysis yielded key insights into student grade distribution and fe
 
 ---
 
-## 🤖 Machine Learning Models
+## Machine Learning Models
 
 Two supervised classification models were implemented to handle the binary task under class imbalance:
 
@@ -155,7 +157,7 @@ Two supervised classification models were implemented to handle the binary task 
 
 ---
 
-## 📐 Model Evaluation
+## Model Evaluation
 
 Evaluation metrics were computed on the 200,000 test set instances. Because detecting failing students (`"Fail"`) is the primary objective, evaluation focuses specifically on minority-class **Recall** and **Precision**.
 
@@ -168,14 +170,14 @@ Evaluation metrics were computed on the 200,000 test set instances. Because dete
 
 ---
 
-## ⚖️ Model Comparison & Selection
+## Model Comparison & Selection
 
 ```text
 Logistic Regression vs Random Forest Evaluation:
 
-• Overall Accuracy:    Random Forest (98.79%) > Logistic Regression (91.02%)
-• Fail Class Recall:   Logistic Regression (94.36%) >> Random Forest (15.87%)
-• Interpretability:    Logistic Regression (Direct Coefficients) > Random Forest (Black-box ensemble)
+- Overall Accuracy:    Random Forest (98.79%) > Logistic Regression (91.02%)
+- Fail Class Recall:   Logistic Regression (94.36%) >> Random Forest (15.87%)
+- Interpretability:    Logistic Regression (Direct Coefficients) > Random Forest (Black-box ensemble)
 ```
 
 ### Final Model Selection: Logistic Regression
@@ -194,7 +196,7 @@ In academic intervention systems, **false negatives (failing students misclassif
 
 ---
 
-## 🔮 Sample Student Predictions
+## Sample Student Predictions
 
 The model features an interactive function for making real-time predictions:
 
@@ -225,7 +227,7 @@ def predict_student(study_hours, attendance, participation):
 
 ---
 
-## 📌 Results Summary
+## Results Summary
 
 1. **Key Driver of Success**: Weekly self-study duration (`weekly_self_study_hours`) is overwhelmingly the most influential factor determining whether a student passes or fails.
 2. **Handling Class Imbalance**: Incorporating `class_weight='balanced'` was critical for preventing models from predicting "Pass" for all students.
@@ -233,34 +235,36 @@ def predict_student(study_hours, attendance, participation):
 
 ---
 
-## 💻 Technologies Used
+## Technologies Used
 
-| Technology | Logo / Icon | Purpose |
-|---|:---:|---|
-| **Python** | 🐍 | Core programming language |
-| **Pandas** | 🐼 | Data manipulation, aggregation, and structure analysis |
-| **NumPy** | 🔢 | Numerical computation and array management |
-| **Matplotlib** | 📊 | Base plotting and visualization generation |
-| **Seaborn** | 🎨 | Statistical data visualizations and heatmaps |
-| **Scikit-learn** | ⚙️ | Preprocessing, model training, scaling, and evaluation metrics |
-| **Jupyter Notebook** | 📓 | Interactive development and documentation environment |
+| Technology | Category | Purpose |
+|---|---|---|
+| **Python** | Language | Core programming language |
+| **Pandas** | Data Processing | Data manipulation, aggregation, and structure analysis |
+| **NumPy** | Computation | Numerical computation and array management |
+| **Matplotlib** | Visualization | Base plotting and visualization generation |
+| **Seaborn** | Visualization | Statistical data visualizations and heatmaps |
+| **Scikit-learn** | Machine Learning | Preprocessing, model training, scaling, and evaluation metrics |
+| **Jupyter Notebook** | Environment | Interactive development and documentation environment |
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 Dev-Tech-IT-Solutions/
 │
+├── assets/
+│   └── notebook_preview.png                   # Jupyter Notebook preview screenshot
 ├── Student_Performance_Prediction.ipynb.ipynb  # Primary notebook with complete EDA & ML pipeline
 ├── student_performance.csv                    # Dataset containing 1,000,000 student records
-├── README.md                                  # Project documentation & report
+├── README.md                                  # Professional project documentation & report
 └── LICENSE                                    # MIT License
 ```
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 ### 1. Clone Repository
 
@@ -287,21 +291,21 @@ Open `Student_Performance_Prediction.ipynb.ipynb` and execute all cells sequenti
 
 ---
 
-## 🖼️ Visual Results
+## Visual Results
 
 All exploratory graphs, correlation heatmaps, confusion matrices, and feature coefficient bar charts are rendered directly within `Student_Performance_Prediction.ipynb.ipynb`.
 
 ---
 
-## 🎥 Explanation Video
+## Explanation Video
 
 A detailed explanation and walkthrough of the project is available here:
 
-[▶ Watch the Project Explanation Video](https://drive.google.com/drive/folders/1GPu48KHTX4FaXyXCW4yi90A-O6xYhUZo)
+[Watch the Project Explanation Video](https://drive.google.com/drive/folders/1GPu48KHTX4FaXyXCW4yi90A-O6xYhUZo)
 
 ---
 
-## 🔗 GitHub Repository
+## GitHub Repository
 
 [View the complete project on GitHub](https://github.com/NihalMishra3009/Dev-Tech-IT-Solutions)
 
@@ -316,14 +320,14 @@ A detailed explanation and walkthrough of the project is available here:
 
 ---
 
-## ⚠️ Limitations
+## Limitations
 
 - **Feature Constraints**: Predictors are limited to 3 metrics (`weekly_self_study_hours`, `attendance_percentage`, `class_participation`).
 - **Low Precision on Fail Class**: Due to balanced class weights on a 0.62% minority class, Logistic Regression generates false positives, yielding a ~6.15% precision for the fail label.
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
 - **Probability Threshold Tuning**: Adjust classification decision thresholds to optimize the Precision-Recall trade-off.
 - **Advanced Resampling**: Implement SMOTE or Random UnderSampling to improve minority class precision.
@@ -332,7 +336,7 @@ A detailed explanation and walkthrough of the project is available here:
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Nihal Mishra**  
 *AI/ML Intern*  
@@ -340,6 +344,6 @@ A detailed explanation and walkthrough of the project is available here:
 
 ---
 
-## 📜 License
+## License
 
 This project is licensed under the [MIT License](LICENSE).
